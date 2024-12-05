@@ -81,16 +81,30 @@ body {
   font-weight: bold;
   color: #d9534f;
 }
+.words.line2 {
+  top: 30%;
+  font-size: 0.6rem;
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Arial', sans-serif; 
+}
 
-.words.line2,
-.words.line3,
-.words.line4 {
+.words.line3 {
   top: 50%;
   font-size: 0.6rem;
   text-align: center;
   font-weight: bold;
   font-family: 'Arial', sans-serif; 
 }
+
+.words.line4 {
+  top: 70%;
+  font-size: 0.6rem;
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Arial', sans-serif; 
+}
+
 
 /* Envelope Animation States */
 .open .flap {
