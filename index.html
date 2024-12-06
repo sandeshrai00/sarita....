@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Love Letter for Sarita</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Background Music -->
+    <audio id="bg-music" autoplay loop>
+      <source src="1.mp3" type="audio/mp3" />
+      Your browser does not support the audio element.
+    </audio>
+    <button id="toggle-music" class="music-button">Pause Music</button>
+
+    <!-- Envelope Wrapper -->
+    <div class="envlope-wrapper">
+      <div id="envelope" class="close" aria-expanded="false">
+        <div class="front flap"></div>
+        <div class="front pocket"></div>
+        <div class="letter">
+          <div class="words line1">Sarita</div>
+          <div class="words line2">
+            You’re everything I’ve ever wanted. All I ask is one chance to love
+            you,
+          </div>
+          <div class="words line3">
+            to show you how special you are to me.
+          </div>
+          <div class="words line4">
+            You mean the world to me, and I just want to be yours.
+          </div>
+        </div>
+        <div class="hearts">
+          <div class="heart a1"></div>
+          <div class="heart a2"></div>
+          <div class="heart a3"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Random Romantic Quote -->
+    <div id="quote" class="love-quote"></div>
+
+    <!-- Buttons -->
+    <div class="reset">
+      <button id="open">Open</button>
+      <button id="reset">Close</button>
+    </div>
+
+    <!-- Confetti Animation -->
+    <canvas id="confetti"></canvas>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

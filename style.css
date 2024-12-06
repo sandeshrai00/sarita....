@@ -1,0 +1,257 @@
+/* Overall Page Styling */
+body {
+  background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%); /* Romantic gradient */
+  font-family: "Dancing Script", cursive; /* Previous font */
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  color: #d9534f;
+}
+
+/* Envelope Wrapper */
+.envlope-wrapper {
+  height: 380px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Envelope Styling */
+#envelope {
+  position: relative;
+  width: 280px;
+  height: 180px;
+  background-color: #d9534f; /* Romantic red */
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Flap Styling */
+.front {
+  position: absolute;
+  width: 0;
+  height: 0;
+  z-index: 3;
+}
+
+.flap {
+  border-left: 140px solid transparent;
+  border-right: 140px solid transparent;
+  border-bottom: 82px solid transparent;
+  border-top: 98px solid #d9534f; /* Matching romantic red */
+  transform-origin: top;
+  pointer-events: none;
+}
+
+/* Pocket Styling */
+.pocket {
+  border-left: 140px solid #f5a3a2; /* Soft pinkish red for the pocket */
+  border-right: 140px solid #f5a3a2;
+  border-bottom: 90px solid #ff6f61; /* Light romantic red */
+  border-top: 90px solid transparent;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+/* Letter Styling */
+.letter {
+  position: relative;
+  background-color: #fff;
+  width: 90%;
+  height: 90%;
+  top: 5%;
+  margin: 0 auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 26px rgba(0, 0, 0, 0.12);
+  font-family: "Dancing Script", cursive; /* Previous font */
+  overflow: hidden;
+}
+
+.letter .words {
+  padding: 8px;
+  font-size: 1rem;
+  text-align: center;
+  color: #333;
+  line-height: 1;
+}
+
+.words.line1 {
+  font-size: 1.4rem; /* Larger for the name */
+  font-weight: bold;
+  color: #d9534f;
+}
+
+.words.line2,
+.words.line3,
+.words.line4 {
+  top: 50%;
+  font-size: 0.8rem;
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Arial', sans-serif; 
+}
+
+/* Envelope Animation States */
+.open .flap {
+  transform: rotateX(180deg);
+  transition: transform 0.4s ease, z-index 0.6s;
+  z-index: 1;
+}
+
+.close .flap {
+  transform: rotateX(0deg);
+  transition: transform 0.4s 0.6s ease, z-index 1s;
+  z-index: 5;
+}
+
+.open .letter {
+  transform: translateY(-100px);
+  transition: transform 0.4s 0.6s ease, z-index 0.6s;
+  z-index: 2;
+}
+
+.close .letter {
+  transform: translateY(0);
+  transition: transform 0.4s ease, z-index 1s;
+  z-index: 1;
+}
+
+/* Reset Button Styling */
+.reset {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.reset button {
+  font-weight: bold;
+  font-style: normal;
+  background-color: transparent;
+  border: solid 2px #d9534f;
+  border-radius: 4px;
+  color: #d9534f;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.reset button:hover {
+  background-color: #d9534f;
+  color: #fff;
+}
+
+/* Heart Animations */
+.hearts {
+  position: absolute;
+  top: 90px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.heart {
+  position: absolute;
+  bottom: 0;
+  right: 10%;
+  pointer-events: none;
+}
+
+.heart:before,
+.heart:after {
+  position: absolute;
+  content: "";
+  left: 50px;
+  top: 0;
+  width: 50px;
+  height: 80px;
+  background: #e60073; /* Deep romantic pink */
+  border-radius: 50px 50px 0 0;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+
+.heart:after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
+.a1 {
+  left: 20%;
+  transform: scale(0.6);
+  opacity: 1;
+  animation: slideUp 4s linear 1, sideSway 2s ease-in-out 4 alternate;
+}
+
+.a2 {
+  left: 55%;
+  transform: scale(1);
+  opacity: 1;
+  animation: slideUp 5s linear 1, sideSway 4s ease-in-out 2 alternate;
+}
+
+.a3 {
+  left: 10%;
+  transform: scale(0.8);
+  opacity: 1;
+  animation: slideUp 7s linear 1, sideSway 2s ease-in-out 6 alternate;
+}
+
+@keyframes slideUp {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -600px;
+  }
+}
+
+@keyframes sideSway {
+  0% {
+    margin-left: 0px;
+  }
+  100% {
+    margin-left: 50px;
+  }
+}
+
+/* Play/Pause Button Styling */
+.music-button {
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bold;
+  font-style: normal;
+  background-color: #ff6f61; /* Romantic coral background */
+  border: none;
+  border-radius: 25px;
+  color: #fff;
+  font-size: 16px;
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-transform: uppercase;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover Effect for Play/Pause Button */
+.music-button:hover {
+  background-color: #d9534f; /* Darker romantic red on hover */
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Focus Effect for Accessibility */
+.music-button:focus {
+  outline: 3px solid #ff69b4; /* Pink outline for focus */
+  box-shadow: 0 0 5px rgba(255, 105, 180, 0.8);
+}
+
+/* Disabled State for Button */
+.music-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  box-shadow: none;
+}
